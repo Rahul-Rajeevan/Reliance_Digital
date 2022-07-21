@@ -13,6 +13,7 @@ const Home = () => {
     const {images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,
       addItems6,addItems7,addItems8, addItems9, addItems10}=useContext(AppContext)
 
+      
     return (
     <div>
         <img style={{width:"100%"}} src="https://www.reliancedigital.in/medias/Boot-Up-ICICI-Offer-Carousel-Banner-14-07-2022.jpg?context=bWFzdGVyfGltYWdlc3wyNTQ0MDh8aW1hZ2UvanBlZ3xpbWFnZXMvaDgxL2hmNS85ODYxNDY0NjIxMDg2LmpwZ3xmYzQzYzE3MTg1YTk5MjE5OWU4ZTE3ODYzNjU1ZmIxYzg1Mjc0YThjZmMyYWYxNGE2NjRmZjM2OTNkMTI5NDMx" alt="no"/>
@@ -77,6 +78,7 @@ const Home = () => {
           </div>
         </div>
         <br/>
+        
     </div>
   )
 }
