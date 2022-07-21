@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Image, Input, Spacer, Icon } from '@chakra-ui/react'
 import React from 'react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, Search2Icon } from '@chakra-ui/icons'
 import {Link} from "react-router-dom"
 import "./Navbar.css";
 import Home from './Home';
@@ -41,7 +41,7 @@ const Navbar = () => {
             <Image src='https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg' alt='logo' />
         </Box>
         <Spacer/><Spacer/><Spacer/>
-        <Input htmlSize={65} width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products'/>
+        <Input htmlSize={65} width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' rightIcon={<Search2Icon/>}/>
         <Spacer/><Spacer/><Spacer/><Spacer/>
         <Flex width="300px">
         <Box>Select your location</Box>
@@ -52,7 +52,6 @@ const Navbar = () => {
         <Spacer/>
         </Flex>
         </Flex>
-        <br/>
        
 
         <div className="upperBox">
@@ -118,7 +117,6 @@ const Navbar = () => {
     
     </Box>
     </div>
-    <Home/>
     </div>  
   )
 }
