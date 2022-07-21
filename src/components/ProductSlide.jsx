@@ -3,9 +3,9 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import Style from "./Home.module.css";
 
-const ProductSlide = ({list}) => {
+const ProductSlide = ({list,number}) => {
     const properties1 = {
-        slidesToShow: 4,
+      slidesToShow:{number},
         slidesToScroll: 4,
         autoplay: false,
         indicators: true,
@@ -14,7 +14,7 @@ const ProductSlide = ({list}) => {
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 4,
+                slidesToShow: number,
                 slidesToScroll: 4
             }
         },
@@ -43,20 +43,20 @@ const ProductSlide = ({list}) => {
       }
   return (
     <div>
-        <Slide id={Style.na} {...properties1}>
+        <Slide id={Style.na} {...properties1} >
         {list.map((el) => {
           el.quantity = 1;
           return (
-            <div className="each-slide" id={Style.w1} key={el.id}>
+            <div  id={Style.w1} key={el.id}>
               <div className={Style.q2} id={Style.t}>
-                <img src={el.image} alt="no" style={{height:"200px",width:"200px"}}/>
+                <img src={el.image} alt="no" style={{height:"150px",width:"150px"}}/>
+                <div style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
                 <p className={Style.h1}>{el.name}</p>
-                <p className={Style.pr}>₹ {el.price}</p>
-                <button className={Style.btns}
-                  // onClick={() => dispatch({ type: "ADD_TO_CART", payload: el })}
-                >
-                  ADD TO CART
-                </button>
+                <div style={{display:"flex"}}><p >Offer Price :</p><p className={Style.pr}>₹{el.price}</p></div>
+                <div style={{display:"flex"}}><p>M.R.P :</p> <p style={{textDecoration: "line-through"}}>₹{el.offer}</p></div>
+                <p>You Save {el.save}%</p>
+                <button className={Style.b1}>OFFERS AVAILABLE</button>
+                </div>
               </div>
             </div>
           );

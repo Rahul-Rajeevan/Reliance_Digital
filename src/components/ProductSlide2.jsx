@@ -3,9 +3,9 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import Style from "./Home.module.css";
 
-const ProductSlide2 = ({list}) => {
+const ProductSlide2 = ({list,number}) => {
     const properties1 = {
-        slidesToShow: 4,
+        slidesToShow: number,
         slidesToScroll: 4,
         autoplay: false,
         indicators: true,
@@ -14,7 +14,7 @@ const ProductSlide2 = ({list}) => {
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 4,
+                slidesToShow: number,
                 slidesToScroll: 4
             }
         },
