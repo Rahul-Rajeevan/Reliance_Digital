@@ -3,7 +3,6 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { AppContext } from '../context/AppContext';
 import Banner from './Banner';
-import Footer from './Footer';
 import Style from "./Home.module.css";
 import ProductSlide from './ProductSlide';
 import ProductSlide2 from './ProductSlide2';
