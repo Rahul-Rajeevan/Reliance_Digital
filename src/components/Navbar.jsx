@@ -1,9 +1,11 @@
 import { Box, Button, Flex, Image, Input, Spacer, Icon } from '@chakra-ui/react'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { ChevronDownIcon, Search2Icon } from '@chakra-ui/icons'
 import {Link, useNavigate} from "react-router-dom"
 import "./Navbar.css";
 import Home from './Home';
+import { AppContext } from '../context/AppContext';
+import searchicon from "./searchicon.svg"
 
 const Navbar = () => {
 
@@ -20,18 +22,26 @@ const Navbar = () => {
   ];
 
   const navigate=useNavigate()
+  const {firstName,setsearch} = useContext(AppContext)
+  const arr=[{a:"laptop",b:"/laptops"},{a:"Smartphone",b:"/smartphones"},{a:"smartphone",b:"/smartphones"},{a:"phone",b:"/smartphones"},{a:"watch",b:"/smartwatches"},{a:"tablet",b:"/tablets"},{a:"Laptop",b:"/laptops"}]
+  const [search1, setsearch1] = useState("")
+  const handle=()=>{
+      setsearch(search1)
+      for(let i=0;i<arr.length;++i)
+      {if(search1===arr[i].a)
+            navigate(arr[i].b)
+      }
+      navigate("/search")
+  }
   return (
     <div >
-      
-      
-    
 
       <Flex bg={"#e42529"} color="white">
           <Spacer/>
           <Flex width="300px">
-          <Box>Find a store |</Box>
-          <Box>Buying guides |</Box>
-          <Box>Contact us</Box>
+          <Box cursor="pointer">Find a store |</Box>
+          <Box cursor="pointer">Buying guides |</Box>
+          <Box cursor="pointer">Contact us</Box>
           </Flex>
         </Flex>
         <Box bg={"#e42529"} color="white">
@@ -42,14 +52,15 @@ const Navbar = () => {
             <Image src='https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg' alt='logo' onClick={()=>navigate("/")} style={{cursor:"pointer"}}/>
         </Box>
         <Spacer/><Spacer/><Spacer/>
-        <Input htmlSize={65} width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' rightIcon={<Search2Icon/>}/>
+        <Input htmlSize={65} color="black" width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' onChange={(e)=>setsearch1(e.target.value)} />
+        <img src={searchicon} alt='none' style={{marginLeft:"-50px",zIndex:2,height:"30px",cursor:"pointer",marginTop:"7px"}} onClick={handle}/>
         <Spacer/><Spacer/><Spacer/><Spacer/>
         <Flex width="300px">
-        <Box>Select your location</Box>
+        <Box cursor="pointer">Select your location</Box>
         <Spacer/>
-        <Box>Cart</Box>
+        <Box cursor="pointer">Cart</Box>
         <Spacer/>
-        <Box onClick={()=>navigate("/login")}>Login</Box>
+        <Box onClick={()=>navigate("/login")} cursor="pointer">{firstName!==""?firstName:"Login"}</Box>
         <Spacer/>
         </Flex>
         </Flex>
@@ -58,6 +69,91 @@ const Navbar = () => {
         <div className="box98" style={{cursor:"pointer"}}>MOBILES & TABLETS</div>
       <div className="box99">
 <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p onClick={()=>navigate("/smartphone")}>Smartphones</p>
+<p onClick={()=>{setsearch("OnePlus");navigate("/search")}}>OnePlus Nord 2T 5G</p>
+<p onClick={()=>navigate("/smartwatches")}>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p onClick={()=>navigate("/tablets")}>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p onClick={()=>navigate("/tablets")}>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
+            </div>
+      <div className="box97" style={{cursor:"pointer"}}>TELEVISIONS</div>
+      <div className="box99">
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}> 
+<p onClick={()=>{setsearch("Television");navigate("/search")}}>Televisions</p>
+<p onClick={()=>{setsearch("Television");navigate("/search")}}>Smart TVs</p>
+<p>32 Inch TVs</p>
+<p>43 Inch TVs</p>
+<p>55 Inch TVs</p>
+<p>Android TVs</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Gaming</p>
+<p>Gaming Consoles</p>
+<p>Gaming Accessories</p>
+<p>Gaming Titles</p>
+<p>Projectors</p>
+<p>Streaming Devices</p>
+</div>
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"100%"}}>
+<p>Reconnect Disney | Marvel Audio Collection</p>
+<p>TV & Audio Accessories</p>
+<p>Virtual Reality Headsets</p>
+<p>Stabilizers & Surge Protectors</p>
+<p>Power Strips & Extension Cords</p>
+<p>Electronic Musical Instruments</p>
+<p>Musical Mini Keyboards</p>
+<p>Musical Standard Keyboards</p>
+</div>
+</div>  
+            </div>
+      <div className="box96" style={{cursor:"pointer"}}>HEADPHONES & SPEAKERS</div>
+      <div className="box99">
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}> 
+<p>Headphones & Headsets</p>
+<p>True Wireless</p>
+<p>Bluetooth Neckbands</p>
+<p>Wired Earphones</p>
+<p>On Ear Headphones</p>
+<p>Noise Cancelling Headphones</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"30%"}}>
+<p>Bluetooth & WiFi Speakers</p>
+<p>Bluetooth Speakers</p>
+<p>Smart Speakers</p>
+</div>
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>TV Speakers & Soundbars</p>
+<p>Soundbars</p>
+<p>Home Theatre Systems</p>
+<p>Party speakers</p>
+<p>Multimedia</p>
+<p>Audio, Speaker Stands</p>
+<p>Musical Instruments</p>
+</div>
+</div>  
+            </div>
+      <div className="box95" style={{cursor:"pointer"}}>HOME APPLIANCES</div>
+      <div className="box99">
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
 <div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
 <p>Smartphones</p>
 <p>OnePlus Nord 2T 5G</p>
@@ -82,36 +178,139 @@ const Navbar = () => {
 </div>
 </div>  
             </div>
-      <div className="box97" style={{cursor:"pointer"}}>TELEVISIONS</div>
+      <div className="box94" style={{cursor:"pointer"}}>COMPUTERS</div>
       <div className="box99">
-            g34546hjggk
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
             </div>
-      <div className="box96" style={{cursor:"pointer"}}>HEADPHONES & SPEAKERS</div>
+            <div className="box94" style={{cursor:"pointer"}}>CAMERAS</div>
       <div className="box99">
-            g34546hjggk
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
             </div>
-      <div className="box95" style={{cursor:"pointer"}}>HOME APPLIANCES</div>
+            <div className="box94" style={{cursor:"pointer"}}>KITCHEN APPLIANCES</div>
       <div className="box99">
-            g34546hjggk
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
             </div>
-      <div className="box94">COMPUTERS</div>
+            <div className="box94" style={{cursor:"pointer"}}>PERSONAL CARE</div>
       <div className="box99">
-            g34546hjggk
-            </div>
-            <div className="box94">CAMERAS</div>
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
+            </div><div className="box94" style={{cursor:"pointer"}}>ACCESSORIES</div>
       <div className="box99">
-            g34546hjggk
-            </div>
-            <div className="box94">KITCHEN APPLIANCES</div>
-      <div className="box99">
-            g34546hjggk
-            </div>
-            <div className="box94">PERSONAL CARE</div>
-      <div className="box99">
-            g34546hjggk
-            </div><div className="box94">ACCESSORIES</div>
-      <div className="box99">
-            g34546hjggk
+      <div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
             </div>
        </div>
 

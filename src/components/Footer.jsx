@@ -10,7 +10,7 @@ const Footer = () => {
 <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"90%",margin:"auto"}}>
 <div style={{display:"flex", flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between" }}>       
 <button  onClick={()=>navigate("/laptops")}>PRODUCT CATEGORIES</button>
-<button onClick={()=>navigate("/laptops")}>Smartphones</button>
+<button onClick={()=>navigate("/smartphone")}>Smartphones</button>
 <button onClick={()=>navigate("/laptops")}>Laptops</button>
 <button onClick={()=>navigate("/laptops")}>DSLR Cameras</button>
 <button onClick={()=>navigate("/topsellers")}>Televisions</button>
@@ -38,8 +38,8 @@ const Footer = () => {
 <br/><br/><br/>
 <h3>EXPERIENCE RELIANCE DIGITAL APP ON MOBILE</h3>
 <div style={{display:"flex",width:"120px",gap:"1rem",borderRadius:"10px"}}>
-    <img style={{backgroundColor:"#1f4985"}} src='https://www.reliancedigital.in/build/client/images/google_play_store.png' alt='no'/>
-    <img style={{backgroundColor:"#1f4985"}} src="https://www.reliancedigital.in/build/client/images/ios_app_store_icon.png" alt="no"/>
+    <img style={{backgroundColor:"#1f4985",cursor:"pointer"}} src='https://www.reliancedigital.in/build/client/images/google_play_store.png' alt='no' />
+    <img style={{backgroundColor:"#1f4985",cursor:"pointer"}} src="https://www.reliancedigital.in/build/client/images/ios_app_store_icon.png" alt="no"/>
 </div>
 <br/>
 </div> 

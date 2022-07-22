@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { AppContext } from '../context/AppContext';
@@ -9,20 +10,32 @@ import ProductSlide from './ProductSlide';
 import ProductSlide2 from './ProductSlide2';
 
 const Home = () => {
-
+const navigate=useNavigate()
     const {images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,
-      addItems6,addItems7,addItems8, addItems9, addItems10}=useContext(AppContext)
+      addItems6,addItems7,addItems8, addItems9, addItems10, bigarr}=useContext(AppContext)
 
+      // useEffect(() => {
+      //   localStorage.setItem("bigarr",JSON.stringify(bigarr))
+      // }, [])
+      
+      
     return (
     <div>
         <img style={{width:"100%"}} src="https://www.reliancedigital.in/medias/Boot-Up-ICICI-Offer-Carousel-Banner-14-07-2022.jpg?context=bWFzdGVyfGltYWdlc3wyNTQ0MDh8aW1hZ2UvanBlZ3xpbWFnZXMvaDgxL2hmNS85ODYxNDY0NjIxMDg2LmpwZ3xmYzQzYzE3MTg1YTk5MjE5OWU4ZTE3ODYzNjU1ZmIxYzg1Mjc0YThjZmMyYWYxNGE2NjRmZjM2OTNkMTI5NDMx" alt="no"/>
 
         <Banner list={images}/>
         <br/>
-        <h1 className={Style.zz}>BEST DEALS ON LATEST LAPTOPS</h1><br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>BEST DEALS ON LATEST LAPTOPS  |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/laptops")}>VIEW ALL</h1>
+        </div>
+        
         <div style={{"width":"95%",margin:"auto"}}><ProductSlide list={addItems1} number={5}/></div>
         <br/><hr/><br/>
-        <h1 className={Style.zz}>LOWEST PRICES ON SMALL APPLIANCES</h1><br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>LOWEST PRICES ON SMALL APPLIANCES  |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/small_appliances")}>VIEW ALL</h1>
+        </div><br/>
         <div style={{"width":"95%",margin:"auto"}}><ProductSlide list={addItems2} number={5}/></div>
         <br/><hr/>
         <br/><h1 className={Style.zz}>TOP BRANDS - WASHING MACHINE</h1><br/>
@@ -47,8 +60,11 @@ const Home = () => {
           </div>
           )}
         </div> 
-        <br/><hr/>
-        <br/><h1 className={Style.zz}>SMARTWATCHES AT NEVER BEFORE PRICES</h1><br/>
+        <br/><hr/><br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>SMARTWATCHES AT NEVER BEFORE PRICES  |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/smartwatches")}>VIEW ALL</h1>
+        </div><br/>
         <div style={{display:"flex",justifyContent:"space-around"}}>
           <div >
             <img style={{height:"350px"}} src="https://www.reliancedigital.in/medias/Smartwatches-at-NEVER-before-prices.jpg?context=bWFzdGVyfGltYWdlc3w5NjczNHxpbWFnZS9qcGVnfGltYWdlcy9oYmYvaGZiLzk4NjAwNjU5NTE3NzQuanBnfGMwMmUwNTdhMzY1NDBmNjk3ZWJiZmNiMTBkZGRhOGZjNTYxNjgxMTQ4YjllYjhjYjRiZTAxYTU5MWUyMWNiZWE" alt='no'/>
@@ -58,7 +74,11 @@ const Home = () => {
           </div>
         </div>
         <br/><hr/>
-        <br/><h1 className={Style.zz}>TOP SELLERS FROM TCL & IFFALCON</h1><br/>
+        <br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>TOP SELLERS FROM TCL & IFFALCON |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/topsellers")}>VIEW ALL</h1>
+        </div><br/>
         <div style={{display:"flex",justifyContent:"space-around"}}>
           <div style={{width:"70%"}}>
           <ProductSlide list={addItems9} number={4}/>
@@ -68,6 +88,10 @@ const Home = () => {
           </div>
         </div>
         <br/><hr/><br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>LATEST TABLET LAUNCHES |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/tablets")}>VIEW ALL</h1>
+        </div><br/>
         <div style={{display:"flex",justifyContent:"space-around"}}>
           <div>
             <img style={{height:"350px"}} src="https://www.reliancedigital.in/medias/Tablets.jpg?context=bWFzdGVyfGltYWdlc3w1NDUyNHxpbWFnZS9qcGVnfGltYWdlcy9oYTgvaGRiLzk4NjIyMDgwOTQyMzguanBnfDJkYTA3NzA1YWUxZmNiMGY0N2EzZjBjOTlkMTNiYzlkNjM5NjAxN2YzMWRjNjA3MjljNDExYzg3OGU1OTJhM2Y" alt='no'/>

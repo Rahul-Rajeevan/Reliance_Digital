@@ -54,7 +54,7 @@ const ProductSlide = ({list,number}) => {
                 <p className={Style.h1}>{el.name}</p>
                 <div style={{display:"flex"}}><p >Offer Price :</p><p className={Style.pr}>₹{el.price}</p></div>
                 <div style={{display:"flex"}}><p>M.R.P :</p> <p style={{textDecoration: "line-through"}}>₹{el.offer}</p></div>
-                <p>You Save {el.save}%</p>
+                <div style={{display:"flex"}}><p>You Save {((el.price/el.offer)*10).toFixed(0)}%</p><p>(₹{el.offer-el.price})</p></div>
                 <button className={Style.b1}>OFFERS AVAILABLE</button>
                 </div>
               </div>

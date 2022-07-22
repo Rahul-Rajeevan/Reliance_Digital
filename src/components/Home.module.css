@@ -29,6 +29,11 @@
     text-align: start;
     padding-left: 50px;
   }
+  .zr{
+    font-size: 15px;
+    color: blue;
+    cursor: pointer;
+  }
   .zy{
     font-size: 25px;
     text-align: center;
@@ -145,6 +150,19 @@
   .q2:hover .h1{
     color: red;
   }
+  .q22{
+    height:350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .q22:hover {
+    cursor: pointer;
+  }
+  .q22:hover .h1{
+    color: red;
+  }
   .q2 p,img{
     background-color:#ffffff;
   }
@@ -154,7 +172,16 @@
     color: #3aa141;
     border-radius: 10px;
     border: #3aa141 solid 1px;
-    padding: 0px 5px 0px 5px;
-    width:120px;
+    padding: 0px 1px 0px 1px;
+    width:100px;
     font-size: 10px;
+  }
+
+  #e1 {
+    height: 20px;
+    width: 20px;
+    margin-top: -5px;
+  }
+  #e1:hover {
+    cursor: pointer;
   }

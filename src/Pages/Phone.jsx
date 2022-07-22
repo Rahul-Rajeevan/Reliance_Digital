@@ -6,8 +6,8 @@ import Style from "../components/Home.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid1 from './Grid1';
 import { reducer } from '../components/reducer';
-const Laptop = () => {
-    const {addItems1,inlove}=useContext(AppContext)
+const Phone = () => {
+    const {addItems11,inlove}=useContext(AppContext)
     const handle=(e)=>{
         let [l,r]=e;
        let left=l*200+26999;
@@ -18,10 +18,6 @@ const Laptop = () => {
     }
     const [first, setFirst] = useState(26999)
     const [second, setSecond] = useState(46999)
-    const handleSlider=()=>{
-        addItems1.filter(e=>(e.price>first&&e.price<second))
-        console.log(addItems1)
-    }
 
     const [state, dispatch] = useReducer(reducer,inlove)
 
@@ -54,7 +50,7 @@ const Laptop = () => {
                         <Input value={first} onChange={(e)=>setFirst(e.target.value)}/>
                         <Text>to</Text>
                         <Input value={second} onChange={(e)=>setSecond(e.target.value)}/>
-                        <Button onClick={handleSlider}>GO</Button>
+                        <Button>GO</Button>
                     </Flex>
                 </VStack>
             </Box>
@@ -70,7 +66,7 @@ const Laptop = () => {
                 <Text>Category</Text>
                 <Flex gap="1rem">
                 <Checkbox />
-                <Text>Laptops</Text>
+                <Text>Phones</Text>
                 </Flex>
              </VStack>
              <VStack alignItems="flex-start" paddingLeft="10px">
@@ -103,7 +99,7 @@ const Laptop = () => {
                 </Flex>
             <Box>
             <hr/><br/>
-            <Grid1 list1={addItems1}/>
+            <Grid1 list1={addItems11}/>
             </Box>
             </Box>
         </Flex>
@@ -111,4 +107,4 @@ const Laptop = () => {
   )
 }
 
-export default Laptop
+export default Phone
