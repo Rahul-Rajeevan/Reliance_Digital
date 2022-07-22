@@ -1,22 +1,24 @@
 import React from 'react'
-import { Text, Grid, GridItem, Flex, Spacer } from '@chakra-ui/react'
+// import { Text, Grid, GridItem, Flex, Spacer } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <div>
     <div style={{backgroundColor:"#1f4985",color:"white",height:"420px"}}>
 <br/>
 <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"90%",margin:"auto"}}>
 <div style={{display:"flex", flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between" }}>       
-<p>PRODUCT CATEGORIES</p>
-<p>Smartphones</p>
-<p>Laptops</p>
-<p>DSLR Cameras</p>
-<p>Televisions</p>
-<p>Air Conditioners</p>
-<p>Refrigerators</p>
-<p>Kitchen Appliances</p>
-<p>Accessories</p>
-<p>Personal Care & Grooming</p>
+<button  onClick={()=>navigate("/laptops")}>PRODUCT CATEGORIES</button>
+<button onClick={()=>navigate("/laptops")}>Smartphones</button>
+<button onClick={()=>navigate("/laptops")}>Laptops</button>
+<button onClick={()=>navigate("/laptops")}>DSLR Cameras</button>
+<button onClick={()=>navigate("/topsellers")}>Televisions</button>
+<button onClick={()=>navigate("/laptops")}>Air Conditioners</button>
+<button onClick={()=>navigate("/laptops")}>Refrigerators</button>
+<button onClick={()=>navigate("/laptops")}>Kitchen Appliances</button>
+<button onClick={()=>navigate("/laptops")}>Accessories</button>
+<button onClick={()=>navigate("/laptops")}>Personal Care & Grooming</button>
 <h2>FOLLOW US</h2>
 <div style={{display:"flex",width:"70px",justifyContent:"space-between"}}>
 <i class="fa-brands fa-facebook-square"></i>

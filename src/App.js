@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <div style={{position:"sticky",top:"0",zIndex:1}}><Navbar/></div>
       <AllRoutes/>
       <Footer/>
     </div>

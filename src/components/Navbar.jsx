@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Input, Spacer, Icon } from '@chakra-ui/react'
 import React from 'react'
 import { ChevronDownIcon, Search2Icon } from '@chakra-ui/icons'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import "./Navbar.css";
 import Home from './Home';
 
@@ -18,6 +18,8 @@ const Navbar = () => {
     {id: 1,title: "PERSONAL CARE",path: "/makeup", sub: {a: "LIPS",p1: "/",b: "FACE",p2: "/",c: "EYES",p3: "/",p4: "/",p5: "/",p6: "/",p7: "/",p8: "/",},},
     {id: 1,title: "ACCESSORIES",path: "/makeup", sub: {a: "LIPS",p1: "/",b: "FACE",p2: "/",c: "EYES",p3: "/",p4: "/",p5: "/",p6: "/",p7: "/",p8: "/",},},
   ];
+
+  const navigate=useNavigate()
   return (
     <div >
       
@@ -32,13 +34,12 @@ const Navbar = () => {
           <Box>Contact us</Box>
           </Flex>
         </Flex>
-        <div style={{position:"sticky",top:"0",zIndex:1}}>
         <Box bg={"#e42529"} color="white">
         <br/>
         <Flex>
           <Spacer/>
         <Box width='150px'>
-            <Image src='https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg' alt='logo' />
+            <Image src='https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg' alt='logo' onClick={()=>navigate("/")} style={{cursor:"pointer"}}/>
         </Box>
         <Spacer/><Spacer/><Spacer/>
         <Input htmlSize={65} width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' rightIcon={<Search2Icon/>}/>
@@ -48,75 +49,77 @@ const Navbar = () => {
         <Spacer/>
         <Box>Cart</Box>
         <Spacer/>
-        <Box>Login</Box>
+        <Box onClick={()=>navigate("/login")}>Login</Box>
         <Spacer/>
         </Flex>
         </Flex>
        
-
-        <div className="upperBox">
-        {cat.map((el) => (
-          <div className="main_menu" key={el.id}>
-            <Link className="menu-btn" to={el.path}>
-              {el.title}
-            </Link>
-
-            <div className="xyz">
-              <div className="b">
-                <div className="div">
-                  <ul>
-                    <li>
-                      <Link className="p" to={el.sub.p1}>
-                        {el.sub.a}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p2}>
-                        {el.sub.b}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p3}>
-                        {el.sub.c}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p4}>
-                        {el.sub.d}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p5}>
-                        {el.sub.e}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p6}>
-                        {el.sub.f}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p7}>
-                        {el.sub.g}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="p" to={el.sub.p8}>
-                        {el.sub.h}
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+       <div style={{display:"flex",justifyContent:"space-around",backgroundColor:"#1f4985",color:"white",height:"30px"}}>
+        <div className="box98" style={{cursor:"pointer"}}>MOBILES & TABLETS</div>
+      <div className="box99">
+<div style={{display:"flex",gap:"2rem",paddingLeft:"50px",height:"100%"}}> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between"}}> 
+<p>Smartphones</p>
+<p>OnePlus Nord 2T 5G</p>
+<p>Wearable Technology</p>
+<p>Smart Watch Accessories</p>
+<p>Accessories</p>
+<p>Tablet Accessories</p>
+<p>Mobile Accessories</p>
+<p>Mobile Grips & Stands</p>
+<p>Car Mobile Holders</p>
+</div> 
+<div style={{display:"flex",flexDirection:"column",alignItems:"flex-start",justifyContent:"space-between",height:"70%"}}>
+<p>Headphones & Headsets</p>
+<p>Tablets & eReaders</p>
+<p>Every Day use Tablets below 15000</p>
+<p>Premium Tablets, Above 15001</p>
+<p>Power Banks</p>
+<p>eSlates</p>
+</div>
+<div>
+<p>AI Learning Robots</p>
+</div>
+</div>  
             </div>
+      <div className="box97" style={{cursor:"pointer"}}>TELEVISIONS</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+      <div className="box96" style={{cursor:"pointer"}}>HEADPHONES & SPEAKERS</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+      <div className="box95" style={{cursor:"pointer"}}>HOME APPLIANCES</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+      <div className="box94">COMPUTERS</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+            <div className="box94">CAMERAS</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+            <div className="box94">KITCHEN APPLIANCES</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+            <div className="box94">PERSONAL CARE</div>
+      <div className="box99">
+            g34546hjggk
+            </div><div className="box94">ACCESSORIES</div>
+      <div className="box99">
+            g34546hjggk
+            </div>
+       </div>
 
-
-          </div>
-        ))}
-      </div>   
+       
+      
+      
     
     </Box>
-    </div>
     </div>  
   )
 }
