@@ -1,13 +1,13 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
-import React, { useContext, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import Style from "../components/Home.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid1 from './Grid1';
 import { reducer } from '../components/reducer';
-const Laptop = () => {
-    const {addItems1,inlove}=useContext(AppContext)
+const Search = () => {
+    const {bigarr,search}=useContext(AppContext)
     const handle=(e)=>{
         let [l,r]=e;
        let left=l*200+26999;
@@ -18,12 +18,18 @@ const Laptop = () => {
     }
     const [first, setFirst] = useState(26999)
     const [second, setSecond] = useState(46999)
-    const handleSlider=()=>{
-        addItems1.filter(e=>(e.price>first&&e.price<second))
-        console.log(addItems1)
-    }
+    const [list, setlist] = useState([])
 
-    const [state, dispatch] = useReducer(reducer,inlove)
+    const hand=()=>{
+        
+        const newbigarr=bigarr.filter(e=>e.name.includes(search))
+        setlist(newbigarr)
+    }
+    // const [state, dispatch] = useReducer(reducer,inlove)
+    useEffect(() => {
+      hand();
+    }, [search])
+    
 
   return (
     <Box>
@@ -54,7 +60,7 @@ const Laptop = () => {
                         <Input value={first} onChange={(e)=>setFirst(e.target.value)}/>
                         <Text>to</Text>
                         <Input value={second} onChange={(e)=>setSecond(e.target.value)}/>
-                        <Button onClick={handleSlider}>GO</Button>
+                        <Button>GO</Button>
                     </Flex>
                 </VStack>
             </Box>
@@ -70,7 +76,7 @@ const Laptop = () => {
                 <Text>Category</Text>
                 <Flex gap="1rem">
                 <Checkbox />
-                <Text>Laptops</Text>
+                <Text>Searchs</Text>
                 </Flex>
              </VStack>
              <VStack alignItems="flex-start" paddingLeft="10px">
@@ -103,7 +109,7 @@ const Laptop = () => {
                 </Flex>
             <Box>
             <hr/><br/>
-            <Grid1 list1={addItems1}/>
+            <Grid1 list1={list}/>
             </Box>
             </Box>
         </Flex>
@@ -111,4 +117,4 @@ const Laptop = () => {
   )
 }
 
-export default Laptop
+export default Search

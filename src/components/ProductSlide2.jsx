@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react';
 import React from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
@@ -48,7 +49,8 @@ const ProductSlide2 = ({list,number}) => {
           return (
             <div className="each-slide" id={Style.w1}>
               <div className={Style.q2} id={Style.t}>
-                <img src={el} alt="no" style={{height:"200px",width:"200px"}}/>
+                <img src={el.img} alt="no" style={{height:"200px",width:"200px"}}/>
+                <Text fontSize='xl'>{el.tag}</Text>
               </div>
             </div>
           );
