@@ -26,7 +26,9 @@ const Search = () => {
         setlist(newbigarr)
     }
     // const [state, dispatch] = useReducer(reducer,inlove)
+
     useEffect(() => {
+        window.scrollTo(0, 0)
       hand();
     }, [search])
     
@@ -70,27 +72,6 @@ const Search = () => {
                 <Flex gap="1rem">
                 <Checkbox />
                 <Text>Exclude out of Stock</Text>
-                </Flex>
-             </VStack>
-             <VStack alignItems="flex-start" paddingLeft="10px">
-                <Text>Category</Text>
-                <Flex gap="1rem">
-                <Checkbox />
-                <Text>Searchs</Text>
-                </Flex>
-             </VStack>
-             <VStack alignItems="flex-start" paddingLeft="10px">
-                <Text>Category</Text>
-                <Flex gap="1rem" > <Checkbox />
-                <Text>Lenovo</Text>
-                </Flex>
-                <Flex gap="1rem">
-                <Checkbox />
-                <Text>Acer</Text>
-                </Flex>
-                <Flex gap="1rem">
-                <Checkbox />
-                <Text>Hp</Text>
                 </Flex>
              </VStack>
             </VStack>

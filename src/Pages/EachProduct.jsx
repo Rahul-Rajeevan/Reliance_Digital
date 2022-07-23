@@ -1,5 +1,5 @@
-import React, { useContext, useReducer } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useReducer, useRef } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
 import { Divider,UnorderedList,ListItem, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
 import { reducer } from '../components/reducer';
@@ -9,22 +9,34 @@ import { add, dataAdd } from '../components/Action';
 
 const EachProduct = () => {
     const params=useParams();
-    const {bigarr,initial} = useContext(AppContext)
+    const {bigarr,setCar,pincode,setPincode,settotal} = useContext(AppContext)
+    const navigate=useNavigate()
+    const pin = useRef({})
 
     let g={};
     for(let i=0;i<bigarr.length;++i)
     {
         if(bigarr[i].id===Number(params.id))
-        g=bigarr[i];
+        {g=bigarr[i];
+            g.qty=1;}
     }
    
 
-const [state, dispatch] = useReducer(reducer,initial)
-
 const dataAdd=()=>{
-    dispatch({type:"ADD",payload:g})
-    
+    let r=JSON.parse(localStorage.getItem("cart"))||[]
+    let tempCart =r.filter((item) => item.id === g.id);
+    if (tempCart < 1)
+    {r.push(g)
+    }
+    const initialValue = 0;
+    const sum = r.reduce((total, item) => item.price*item.qty + total, 0);
+    settotal(sum)
+    localStorage.setItem("cart",JSON.stringify(r))    
 }
+
+useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div>
         <Flex>
@@ -59,11 +71,11 @@ const dataAdd=()=>{
                         <Flex><Text>MRP: </Text><Text as='del'>₹{g.offer}</Text></Flex>
                         <Flex color="green"><Text>You Save :</Text><Text>{g.save}%</Text></Flex>
                         <Text fontWeight="bold">FREE Shipping!</Text>
-                        <Input placeholder='Pin Code'/>
+                        <Input placeholder='Pin Code' value={pincode} ref={(e)=>pin.current.value=e}/>
                         <Text fontSize='xs'>*Delivery assurance is subject to our delivery locations staying open as per govt. regulations</Text>
                         <Flex>
                         <Button borderRadius="none" colorScheme='red' width="200px"
-                        onClick={dataAdd}
+                        onClick={()=>{dataAdd();navigate("/cart");}}
                         >ADD TO CART</Button>
                         <Spacer/>
                         <Button borderRadius="none" colorScheme='orange' width="200px">BUY NOW</Button>

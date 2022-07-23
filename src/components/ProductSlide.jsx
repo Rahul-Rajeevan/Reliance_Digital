@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import Style from "./Home.module.css";
@@ -41,13 +42,13 @@ const ProductSlide = ({list,number}) => {
         }
       ]
       }
+      const navigate=useNavigate()
   return (
     <div>
         <Slide id={Style.na} {...properties1} >
         {list.map((el) => {
-          el.quantity = 1;
           return (
-            <div  id={Style.w1} key={el.id}>
+            <div  id={Style.w1} key={el.id} onClick={()=>navigate(`/item/${el.id}`)}>
               <div className={Style.q2} id={Style.t}>
                 <img src={el.image} alt="no" style={{height:"150px",width:"150px"}}/>
                 <div style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>

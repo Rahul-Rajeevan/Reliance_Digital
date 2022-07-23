@@ -1,5 +1,5 @@
-import { Box, Button, Flex, Image, Input, Spacer, Icon } from '@chakra-ui/react'
-import React, { useContext, useState } from 'react'
+import { Box, Button, Flex, Image, Input, Spacer, Icon, Avatar } from '@chakra-ui/react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ChevronDownIcon, Search2Icon } from '@chakra-ui/icons'
 import {Link, useNavigate} from "react-router-dom"
 import "./Navbar.css";
@@ -22,10 +22,11 @@ const Navbar = () => {
   ];
 
   const navigate=useNavigate()
-  const {firstName,setsearch} = useContext(AppContext)
+  const {firstName,setsearch,car} = useContext(AppContext)
   const arr=[{a:"laptop",b:"/laptops"},{a:"Smartphone",b:"/smartphones"},{a:"smartphone",b:"/smartphones"},{a:"phone",b:"/smartphones"},{a:"watch",b:"/smartwatches"},{a:"tablet",b:"/tablets"},{a:"Laptop",b:"/laptops"}]
   const [search1, setsearch1] = useState("")
   const handle=()=>{
+      console.log(search1)
       setsearch(search1)
       for(let i=0;i<arr.length;++i)
       {if(search1===arr[i].a)
@@ -33,6 +34,7 @@ const Navbar = () => {
       }
       navigate("/search")
   }
+
   return (
     <div >
 
@@ -52,15 +54,18 @@ const Navbar = () => {
             <Image src='https://www.reliancedigital.in/build/client/images/loaders/rd_logo.svg' alt='logo' onClick={()=>navigate("/")} style={{cursor:"pointer"}}/>
         </Box>
         <Spacer/><Spacer/><Spacer/>
-        <Input htmlSize={65} color="black" width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' onChange={(e)=>setsearch1(e.target.value)} />
+        <Input htmlSize={65} color="black" width='auto' bg={"white"} borderRadius="25px" placeholder='Find your favorite products' onChange={(e)=>setsearch1(e.target.value[0].toUpperCase() + e.target.value.substring(1))} />
         <img src={searchicon} alt='none' style={{marginLeft:"-50px",zIndex:2,height:"30px",cursor:"pointer",marginTop:"7px"}} onClick={handle}/>
         <Spacer/><Spacer/><Spacer/><Spacer/>
         <Flex width="300px">
-        <Box cursor="pointer">Select your location</Box>
+        <Box cursor="pointer" ><i class="fa-solid fa-location-dot"></i> Select your location</Box>
         <Spacer/>
-        <Box cursor="pointer">Cart</Box>
+
+        <Box cursor="pointer" display="flex" onClick={()=>navigate("/cart")}><i class="fa-solid fa-cart-shopping"></i> 
+        {car>0&&<Box style={{width:"25px",height:"25px",borderRadius:"50%",backgroundColor:"black"}}>{car>0?car:""}</Box> }Cart</Box>
+        
         <Spacer/>
-        <Box onClick={()=>navigate("/login")} cursor="pointer">{firstName!==""?firstName:"Login"}</Box>
+        <Box onClick={()=>navigate("/login")} cursor="pointer"><i class="fa-solid fa-user"></i> {firstName!==""?firstName:"Login"}</Box>
         <Spacer/>
         </Flex>
         </Flex>
