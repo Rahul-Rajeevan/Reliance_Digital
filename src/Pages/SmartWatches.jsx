@@ -1,22 +1,42 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import Style from "../components/Home.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid1 from './Grid1';
+import { reducer } from '../components/reducer';
 const SmartWatches = () => {
-    const {addItems8}=useContext(AppContext)
+    const {addItems8,inlove}=useContext(AppContext)
     const handle=(e)=>{
         let [l,r]=e;
        let left=l*200+26999;
        let right=46999-(100-r)*200;
-       console.log(left,right)
+    //    console.log(left,right)
        setFirst(left)
        setSecond(right)
     }
     const [first, setFirst] = useState(26999)
     const [second, setSecond] = useState(46999)
+    const [item1, setitem1] = useState(addItems8)
+    const handleSlider=()=>{
+        let y=addItems8.filter(e=>(e.price>first&&e.price<second))
+        setitem1(y)
+    }
+    const handleBrand=(val,check)=>{
+        let g=check.target.checked;
+        if(g===true)
+        {let y=addItems8.filter(e=>e.name.includes(val))
+        setitem1(y)}
+        else
+        setitem1(addItems8)
+    }
+
+    const [state, dispatch] = useReducer(reducer,inlove)
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
   return (
     <Box>
         <Flex justifyContent="flex-start">
@@ -43,10 +63,10 @@ const SmartWatches = () => {
                     <Flex justifyContent={"space-between"} width="100%"><Text>₹26999</Text><Text>₹46999</Text></Flex>
                     <br/>
                     <Flex>
-                        <Input value={first}/>
+                        <Input value={first} onChange={(e)=>setFirst(e.target.value)}/>
                         <Text>to</Text>
-                        <Input value={second}/>
-                        <Button>GO</Button>
+                        <Input value={second} onChange={(e)=>setSecond(e.target.value)}/>
+                        <Button onClick={handleSlider}>GO</Button>
                     </Flex>
                 </VStack>
             </Box>
@@ -62,22 +82,21 @@ const SmartWatches = () => {
                 <Text>Category</Text>
                 <Flex gap="1rem">
                 <Checkbox />
-                <Text>SmartWatchess</Text>
+                <Text>SmartWatches</Text>
                 </Flex>
              </VStack>
              <VStack alignItems="flex-start" paddingLeft="10px">
                 <Text>Category</Text>
-                <Flex gap="1rem" >
-                <Checkbox />
-                <Text>Lenovo</Text>
+                <Flex gap="1rem" > <Checkbox onChange={(e)=>handleBrand("Boltt",e)}/>
+                <Text>Boltt</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
-                <Text>Acer</Text>
+                <Checkbox onChange={(e)=>handleBrand("Apple",e)}/>
+                <Text>Apple</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
-                <Text>Hp</Text>
+                <Checkbox onChange={(e)=>handleBrand("Hammer",e)}/>
+                <Text>Hammer</Text>
                 </Flex>
              </VStack>
             </VStack>
@@ -95,27 +114,8 @@ const SmartWatches = () => {
                     </Flex>
                 </Flex>
             <Box>
-            <hr/>
-            <br/>
-            {/* <Grid templateColumns='repeat(4, 1fr)' gap={4} paddingLeft="1%">
-                {addItems1.map(e=>(<GridItem border={"1px solid #D3D3D3"}>
-                <Box boxSize='180px'>
-                    <Image src={e.image} alt='Dan Abramov' />
-                </Box>
-                <Text className={Style.h1} paddingLeft="10px" color={"#1f4985"}>{e.name}</Text>
-                    <Flex paddingLeft="10px" >
-                    <Text>₹{e.price}</Text>
-                    <Text textDecoration={"line-through"}>{e.offer}</Text>
-                    <Text color={"green"}>{e.save}%</Text>
-                    </Flex>
-                    <button className={Style.b1}>OFFERS AVAILABLE</button>
-                    <Flex >
-                        <Flex border={"1px solid #D3D3D3"} gap="1rem" width="50%" height="40px" alignItems="center" justifyContent="center"><Checkbox /><Text>Compare</Text></Flex>
-                        <Flex border={"1px solid #D3D3D3"} gap="1rem" width="50%" height="40px" alignItems="center" justifyContent="center"><Text>Wishlist</Text></Flex>
-                    </Flex>
-                </GridItem>))}
-            </Grid> */}
-            <Grid1 list1={addItems8}/>
+            <hr/><br/>
+            <Grid1 list1={item1}/>
             </Box>
             </Box>
         </Flex>

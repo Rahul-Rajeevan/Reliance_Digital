@@ -11,12 +11,12 @@ import ProductSlide2 from './ProductSlide2';
 
 const Home = () => {
 const navigate=useNavigate()
-    const {images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,
+    const {images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,addItems11,
       addItems6,addItems7,addItems8, addItems9, addItems10, bigarr}=useContext(AppContext)
 
-      // useEffect(() => {
-      //   localStorage.setItem("bigarr",JSON.stringify(bigarr))
-      // }, [])
+      useEffect(() => {
+        localStorage.setItem("bigarr",JSON.stringify(bigarr))
+      }, [])
       
       
     return (
@@ -59,8 +59,16 @@ const navigate=useNavigate()
           <p>{e.h2}</p>
           </div>
           )}
-        </div> 
+        </div>
         <br/><hr/><br/>
+        <div style={{display:"flex",alignItems:"baseline"}}>
+        <h1 className={Style.zz}>LATEST SMARTPHONES  |</h1><br/>
+        <h1 className={Style.zr} onClick={()=>navigate("/smartphone")}>VIEW ALL</h1>
+        </div>
+        
+        <div style={{"width":"95%",margin:"auto"}}><ProductSlide list={addItems11} number={5}/></div>
+        <br/><hr/><br/>
+        
         <div style={{display:"flex",alignItems:"baseline"}}>
         <h1 className={Style.zz}>SMARTWATCHES AT NEVER BEFORE PRICES  |</h1><br/>
         <h1 className={Style.zr} onClick={()=>navigate("/smartwatches")}>VIEW ALL</h1>

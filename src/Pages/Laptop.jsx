@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
-import React, { useContext, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import Style from "../components/Home.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,12 +18,25 @@ const Laptop = () => {
     }
     const [first, setFirst] = useState(26999)
     const [second, setSecond] = useState(46999)
+    const [item1, setitem1] = useState(addItems1)
     const handleSlider=()=>{
-        addItems1.filter(e=>(e.price>first&&e.price<second))
-        console.log(addItems1)
+        let y=addItems1.filter(e=>(e.price>first&&e.price<second))
+        setitem1(y)
+    }
+
+    const handleBrand=(val,check)=>{
+        let g=check.target.checked;
+        if(g===true)
+        {let y=addItems1.filter(e=>e.name.includes(val))
+        setitem1(y)}
+        else
+        setitem1(addItems1)
     }
 
     const [state, dispatch] = useReducer(reducer,inlove)
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
   return (
     <Box>
@@ -75,15 +88,15 @@ const Laptop = () => {
              </VStack>
              <VStack alignItems="flex-start" paddingLeft="10px">
                 <Text>Category</Text>
-                <Flex gap="1rem" > <Checkbox />
+                <Flex gap="1rem" > <Checkbox onChange={(e)=>handleBrand("Lenovo",e)}/>
                 <Text>Lenovo</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
+                <Checkbox onChange={(e)=>handleBrand("Acer",e)}/>
                 <Text>Acer</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
+                <Checkbox onChange={(e)=>handleBrand("HP",e)}/>
                 <Text>Hp</Text>
                 </Flex>
              </VStack>
@@ -103,7 +116,7 @@ const Laptop = () => {
                 </Flex>
             <Box>
             <hr/><br/>
-            <Grid1 list1={addItems1}/>
+            <Grid1 list1={item1}/>
             </Box>
             </Box>
         </Flex>

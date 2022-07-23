@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Cart from '../Pages/Cart'
 import EachProduct from '../Pages/EachProduct'
 import Laptop from '../Pages/Laptop'
 import Login from '../Pages/Login'
@@ -26,6 +27,7 @@ const AllRoutes = () => {
         <Route path='/tablets' element={<Tablets/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/smartphone' element={<Phone/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/item/:id' element={<EachProduct/>}/>
     </Routes>
   )

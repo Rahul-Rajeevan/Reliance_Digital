@@ -1,22 +1,41 @@
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import Style from "../components/Home.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Grid1 from './Grid1';
+import { reducer } from '../components/reducer';
 const SmallAppliances = () => {
-    const {addItems2}=useContext(AppContext)
+    const {addItems2,inlove}=useContext(AppContext)
     const handle=(e)=>{
         let [l,r]=e;
-       let left=l*200+26999;
-       let right=46999-(100-r)*200;
-       console.log(left,right)
+       let left=l*200+1000;
+       let right=21000-(100-r)*200;
+    //    console.log(left,right)
        setFirst(left)
        setSecond(right)
     }
-    const [first, setFirst] = useState(26999)
-    const [second, setSecond] = useState(46999)
+    const [first, setFirst] = useState(1000)
+    const [second, setSecond] = useState(21000)
+    const [item1, setitem1] = useState(addItems2)
+    const handleSlider=()=>{
+        let y=addItems2.filter(e=>(e.price>first&&e.price<second))
+        setitem1(y)
+    }
+    const handleBrand=(val,check)=>{
+        let g=check.target.checked;
+        if(g===true)
+        {let y=addItems2.filter(e=>e.name.includes(val))
+        setitem1(y)}
+        else
+        setitem1(addItems2)
+    }
+    const [state, dispatch] = useReducer(reducer,inlove)
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
   return (
     <Box>
         <Flex justifyContent="flex-start">
@@ -40,13 +59,13 @@ const SmallAppliances = () => {
                             <RangeSliderThumb index={0} />
                             <RangeSliderThumb index={1} />
                     </RangeSlider>
-                    <Flex justifyContent={"space-between"} width="100%"><Text>₹26999</Text><Text>₹46999</Text></Flex>
+                    <Flex justifyContent={"space-between"} width="100%"><Text>₹1000</Text><Text>₹21000</Text></Flex>
                     <br/>
                     <Flex>
-                        <Input value={first}/>
+                        <Input value={first} onChange={(e)=>setFirst(e.target.value)}/>
                         <Text>to</Text>
-                        <Input value={second}/>
-                        <Button>GO</Button>
+                        <Input value={second} onChange={(e)=>setSecond(e.target.value)}/>
+                        <Button onClick={handleSlider}>GO</Button>
                     </Flex>
                 </VStack>
             </Box>
@@ -67,17 +86,16 @@ const SmallAppliances = () => {
              </VStack>
              <VStack alignItems="flex-start" paddingLeft="10px">
                 <Text>Category</Text>
-                <Flex gap="1rem" >
-                <Checkbox />
-                <Text>Lenovo</Text>
+                <Flex gap="1rem" > <Checkbox onChange={(e)=>handleBrand("boAt",e)}/>
+                <Text>boAt</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
-                <Text>Acer</Text>
+                <Checkbox onChange={(e)=>handleBrand("Prestige",e)}/>
+                <Text>Prestige</Text>
                 </Flex>
                 <Flex gap="1rem">
-                <Checkbox />
-                <Text>Hp</Text>
+                <Checkbox onChange={(e)=>handleBrand("Lifelong",e)}/>
+                <Text>Lifelong</Text>
                 </Flex>
              </VStack>
             </VStack>
@@ -95,27 +113,8 @@ const SmallAppliances = () => {
                     </Flex>
                 </Flex>
             <Box>
-            <hr/>
-            <br/>
-            {/* <Grid templateColumns='repeat(4, 1fr)' gap={4} paddingLeft="1%">
-                {addItems1.map(e=>(<GridItem border={"1px solid #D3D3D3"}>
-                <Box boxSize='180px'>
-                    <Image src={e.image} alt='Dan Abramov' />
-                </Box>
-                <Text className={Style.h1} paddingLeft="10px" color={"#1f4985"}>{e.name}</Text>
-                    <Flex paddingLeft="10px" >
-                    <Text>₹{e.price}</Text>
-                    <Text textDecoration={"line-through"}>{e.offer}</Text>
-                    <Text color={"green"}>{e.save}%</Text>
-                    </Flex>
-                    <button className={Style.b1}>OFFERS AVAILABLE</button>
-                    <Flex >
-                        <Flex border={"1px solid #D3D3D3"} gap="1rem" width="50%" height="40px" alignItems="center" justifyContent="center"><Checkbox /><Text>Compare</Text></Flex>
-                        <Flex border={"1px solid #D3D3D3"} gap="1rem" width="50%" height="40px" alignItems="center" justifyContent="center"><Text>Wishlist</Text></Flex>
-                    </Flex>
-                </GridItem>))}
-            </Grid> */}
-            <Grid1 list1={addItems2}/>
+            <hr/><br/>
+            <Grid1 list1={item1}/>
             </Box>
             </Box>
         </Flex>
