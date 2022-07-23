@@ -23,7 +23,7 @@ const Checkout = () => {
     <h2>
       <AccordionButton>
         <Box flex='1' textAlign='left'>
-          Shipping address
+          <Text fontSize='3xl'>Shipping address</Text>
         </Box>
           
         <AccordionIcon />
