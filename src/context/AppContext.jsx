@@ -350,12 +350,18 @@ export const AppContext=createContext()
 export const AppContextProvider = ({children}) => {
   const [mobile, setMobile] = useState("")
   const [firstName, setfirstName] = useState("")
+  const [flat, setflat] = useState("")
+  const [street, setstreet] = useState("")
+  const [state, setstate] = useState("")
+  const [city, setcity] = useState("")
   const [lastName, setlastName] = useState("")
   const [email, setemail] = useState("")
   const [search, setsearch] = useState("")
+  const [pincode, setPincode] = useState("")
   const [car, setCar] = useState(0)
+  const [total, settotal] = useState(0)
 
-const list1={car,setCar,addItems11, search, setsearch,setemail,email,setlastName,lastName,setfirstName,firstName,mobile,setMobile,bigarr,addItems9, addItems10 ,images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,addItems6,addItems7,addItems8,bigarr}
+const list1={flat,setflat,state,setstate,street,setstreet,city,setcity,total,settotal,car,setCar,addItems11, search, setsearch,setemail,email,setlastName,lastName,setfirstName,firstName,mobile,setMobile,bigarr,addItems9, addItems10 ,images,properties1,addItems1,addItems2,addItems3,addItems4,addItems5,addItems6,addItems7,addItems8,bigarr}
   return (
     <AppContext.Provider value={list1}>{children}</AppContext.Provider>
   )

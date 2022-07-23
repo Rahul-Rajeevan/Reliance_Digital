@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer } from 'react'
+import React, { useContext, useEffect, useReducer, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AppContext } from '../context/AppContext';
 import { Divider,UnorderedList,ListItem, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Checkbox, Container, Flex, Grid, GridItem, Image, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Spacer, StackDivider, Text, VStack } from '@chakra-ui/react'
@@ -9,8 +9,9 @@ import { add, dataAdd } from '../components/Action';
 
 const EachProduct = () => {
     const params=useParams();
-    const {bigarr,setCar} = useContext(AppContext)
+    const {bigarr,setCar,pincode,setPincode,settotal} = useContext(AppContext)
     const navigate=useNavigate()
+    const pin = useRef({})
 
     let g={};
     for(let i=0;i<bigarr.length;++i)
@@ -26,8 +27,10 @@ const dataAdd=()=>{
     let tempCart =r.filter((item) => item.id === g.id);
     if (tempCart < 1)
     {r.push(g)
-    // setCar(r.length)
     }
+    const initialValue = 0;
+    const sum = r.reduce((total, item) => item.price*item.qty + total, 0);
+    settotal(sum)
     localStorage.setItem("cart",JSON.stringify(r))    
 }
 
@@ -68,11 +71,11 @@ useEffect(() => {
                         <Flex><Text>MRP: </Text><Text as='del'>₹{g.offer}</Text></Flex>
                         <Flex color="green"><Text>You Save :</Text><Text>{g.save}%</Text></Flex>
                         <Text fontWeight="bold">FREE Shipping!</Text>
-                        <Input placeholder='Pin Code'/>
+                        <Input placeholder='Pin Code' value={pincode} ref={(e)=>pin.current.value=e}/>
                         <Text fontSize='xs'>*Delivery assurance is subject to our delivery locations staying open as per govt. regulations</Text>
                         <Flex>
                         <Button borderRadius="none" colorScheme='red' width="200px"
-                        onClick={()=>{dataAdd();navigate("/cart")}}
+                        onClick={()=>{dataAdd();navigate("/cart");}}
                         >ADD TO CART</Button>
                         <Spacer/>
                         <Button borderRadius="none" colorScheme='orange' width="200px">BUY NOW</Button>

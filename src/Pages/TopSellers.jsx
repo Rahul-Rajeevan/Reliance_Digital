@@ -19,6 +19,8 @@ const TopSellers = () => {
     const [first, setFirst] = useState(26999)
     const [second, setSecond] = useState(46999)
     const [item1, setitem1] = useState(addItems9)
+    const [brand1, setBrand1] = useState("")
+    const [exclude, setExclude] = useState(false)
     const handleSlider=()=>{
         let y=addItems9.filter(e=>(e.price>first&&e.price<second))
         setitem1(y)
@@ -29,9 +31,11 @@ const TopSellers = () => {
         let g=check.target.checked;
         if(g===true)
         {let y=addItems9.filter(e=>e.name.includes(val))
-        setitem1(y)}
+        setitem1(y)
+        setBrand1(val)}
         else
-        setitem1(addItems9)
+       { setitem1(addItems9)
+        setBrand1(val)}
     }
 
     const [state, dispatch] = useReducer(reducer,inlove)
@@ -76,7 +80,7 @@ const TopSellers = () => {
             <VStack alignItems="flex-start" paddingLeft="10px">
                 <Text>Availability</Text>
                 <Flex gap="1rem">
-                <Checkbox />
+                <Checkbox onChange={(e)=>setExclude(e.target.checked)}/>
                 <Text>Exclude out of Stock</Text>
                 </Flex>
              </VStack>
@@ -104,15 +108,16 @@ const TopSellers = () => {
             </VStack>
             </Box>
             <Box>
-                <Flex justifyContent="flex-start">
-                        <Box>(Showing 1- 7 products of 7 products)</Box>
+                <Flex color="#b0b5b9" justifyContent="flex-start" height="50px" paddingLeft="20px" alignItems="center">
+                        <Box>(Showing 1- {item1.length} products of {item1.length} products)</Box>
                 </Flex>
                 <hr/><br/>
-                <Flex>
-                    <Text>Filters</Text>
-                    <Flex>
-                        <Box>Exclude out of Stock</Box>
-                        <Box>10 to 20</Box>
+                <Flex alignItems="center" gap="1rem">
+                    <Text paddingLeft="20px">Filters:</Text>
+                    <Flex gap="1rem">
+                        {exclude&&<Box border={"1px solid #D3D3D3"} padding="0px 10px 0px 10px">Exclude out of Stock</Box>}
+                        <Box border={"1px solid #D3D3D3"} padding="0px 10px 0px 10px">₹ {first} to ₹ {second}</Box>
+                        <Box border={"1px solid #D3D3D3"} padding="0px 10px 0px 10px">Brand: {brand1.length===0?"All":brand1}</Box>
                     </Flex>
                 </Flex>
             <Box>

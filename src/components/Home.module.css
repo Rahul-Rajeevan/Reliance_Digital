@@ -163,8 +163,12 @@
   .q22:hover .h1{
     color: red;
   }
+  .q22:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
   .q2 p,img{
     background-color:#ffffff;
+    /* background-color:#f1eeee */
   }
   
   .b1{
