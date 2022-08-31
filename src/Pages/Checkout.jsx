@@ -49,7 +49,7 @@ const Checkout = () => {
           <ModalCloseButton />
           <ModalBody >
             <Flex flexDirection="column" gap="1rem">
-              <Input placeholder='Pincode*' ref={(e)=>address.current["pin"]=e} />
+              <Input type="number" placeholder='Pincode*' ref={(e)=>address.current["pin"]=e} />
               <Flex gap="1rem">
               <Input placeholder='Enter First Name*' ref={(e)=>address.current["first"]=e} value={firstName}/>
               <Input placeholder='Enter Last Name*' ref={(e)=>address.current["last"]=e} value={lastName}/>
@@ -62,8 +62,8 @@ const Checkout = () => {
               <Input placeholder='Enter State*' ref={(e)=>address.current["state"]=e}/>
               </Flex>
               <Flex gap="1rem">
-              <Input placeholder='Enter mobile number*' ref={(e)=>address.current["mobile"]=e} value={mobile}/>
-              <Input placeholder='Enter landline number*' ref={(e)=>address.current["land"]=e}/>
+              <Input type="number" placeholder='Enter mobile number*' ref={(e)=>address.current["mobile"]=e} value={mobile}/>
+              <Input type="number" placeholder='Enter landline number*' ref={(e)=>address.current["land"]=e}/>
               </Flex>
               </Flex>
           </ModalBody>

@@ -30,8 +30,10 @@ const Register = () => {
     const handle123=()=>{
       if(firstnam!==""&&lastName!==""&&email!=="")
             {setfirstName(firstnam); 
-                
+              if(verified)  
               navigate("/");
+              else
+              alert("Please verify email address")
             }
             else
             setfirst(true)
@@ -46,7 +48,7 @@ const Register = () => {
         <Input placeholder='First Name*' width="90%" onChange={(e)=>setfirstnam(e.target.value)}/>
         <Input placeholder='Last Name*' width="90%" onChange={(e)=>setlastName(e.target.value)}/>
         <Input placeholder='Email Address*' width="90%" onChange={(e)=>setemail(e.target.value)}/>
-        {first&&<Text color="red" fontSize='sm'>Field marked * are mandatory</Text>}
+        {firstnam===""&&<Text color="red" fontSize='sm'>Field marked * are mandatory</Text>}
         <Text  fontSize='xs'>Your email address will be used to send order invoice, order updates etc.</Text>
         {first?<Button colorScheme='red' variant='outline' onClick={handleEmail}>
             Verify Email
@@ -63,13 +65,15 @@ const Register = () => {
         <Button colorScheme='red' width="90%" onClick={()=>{
           if(firstnam!==""&&lastName!==""&&email!=="")
           {setfirstName(firstnam); 
+          if(verified)
           toast({
           title: 'Account created.',
           description: "We've created your account for you.",
           status: 'success',
           duration: 9000,
           isClosable: true,
-        }) 
+        })
+        if(verified)
         navigate("/checkout")
         }
         else

@@ -44,7 +44,12 @@ const handleCheckout=()=>{
 
     useEffect(() => {
        setItem(JSON.parse(localStorage.getItem("cart"))||[]);
-    //    console.log(item.length)
+        alert("You are being redirected to Home page")
+       setTimeout(() => {
+        navigate("/")
+        localStorage.setItem("cart",JSON.stringify([]))
+       }, 5000);
+       console.log(item.length)
     //    setCar(item.length)
          }, [])
     

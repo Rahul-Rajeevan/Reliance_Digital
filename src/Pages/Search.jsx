@@ -78,15 +78,15 @@ const Search = () => {
             </Box>
             <Box>
                 <Flex justifyContent="flex-start">
-                        <Box>(Showing 1- 7 products of 7 products)</Box>
+                        <Box paddingLeft="20px">(Showing 1- {list.length} products of {list.length} products)</Box>
                 </Flex>
                 <hr/><br/>
                 <Flex>
-                    <Text>Filters</Text>
+                    {/* <Text>Filters</Text>
                     <Flex>
                         <Box>Exclude out of Stock</Box>
                         <Box>10 to 20</Box>
-                    </Flex>
+                    </Flex> */}
                 </Flex>
             <Box>
             <hr/><br/>

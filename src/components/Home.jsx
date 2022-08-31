@@ -1,3 +1,4 @@
+import { Box, Image } from '@chakra-ui/react';
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Slide } from 'react-slideshow-image'
@@ -39,9 +40,9 @@ const navigate=useNavigate()
         <div style={{"width":"95%",margin:"auto"}}><ProductSlide list={addItems2} number={5}/></div>
         <br/><hr/>
         <br/><h1 className={Style.zz}>TOP BRANDS - WASHING MACHINE</h1><br/>
-        <div style={{display:"flex",justifyContent:"space-between"}}>
-          {addItems3.map(e=><img src={e} alt="no"/>)}
-        </div>
+        <Box style={{display:"flex",justifyContent:"space-between"}}>
+          {addItems3.map(e=><Image width={["23%"]} src={e} alt="no"/>)}
+        </Box>
         <br/><h1 className={Style.zz}>OFFER YOU CANNOT MISS</h1><br/>
         <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",width:"95%",margin:"auto"}}>
           {addItems4.map(e=><img src={e} alt="no"/>)}

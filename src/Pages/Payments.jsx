@@ -7,7 +7,7 @@ const Payments = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [yes, setyes] = useState(false)
     const [cvv, setCvv] = useState("")
-    const [bad, setbad] = useState(false)
+    const [bad, setbad] = useState(true)
     const card = useRef({})
     const navigate=useNavigate()
     const handleclick=()=>{
@@ -21,7 +21,7 @@ const Payments = () => {
         if(cvv!=="")
         navigate("/final")  
         else
-        setbad(true)
+        setbad(false)
     }
   return (
     <div>
@@ -52,7 +52,7 @@ const Payments = () => {
         <Input placeholder='Card Number*' type="number" width="60%" ref={(e)=>card.current["number"]=e}/>
         <Input placeholder='Expiration date*' type="number" width="60%" ref={(e)=>card.current["exp"]=e}/>
         <Input placeholder='Security code*' type="number" width="60%" ref={(e)=>card.current["code"]=e}/>
-        {bad&&<Text color="red">Fields marked * are mandatory</Text>}
+        {!bad&&<Text color="red">Fields marked * are mandatory</Text>}
         </Flex>
           </ModalBody>
 

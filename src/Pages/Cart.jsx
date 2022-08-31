@@ -37,13 +37,18 @@ const handleAdd=(val,id)=>{
 }
 const handleCheckout=()=>{
     if(firstName==="")
-    navigate("/login")
+    {if(item.length===0)
+    alert("Please login and add items to cart")
+    navigate("/login")}
+    else if(item.length===0)
+    alert("Cart is empty")
     else
     navigate("/checkout")
 }
 
     useEffect(() => {
        setItem(JSON.parse(localStorage.getItem("cart"))||[]);
+      
     //    console.log(item.length)
     //    setCar(item.length)
          }, [])
