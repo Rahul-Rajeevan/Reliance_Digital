@@ -26,10 +26,10 @@ All the images and links are used from the original website to get a better expe
 
 
 
-<h4>Landing Page</h4>
+<!-- <h4>Landing Page</h4> -->
 
-<img src="https://user-images.githubusercontent.com/98819392/185300959-35cb2844-c9b2-4e00-88dc-f47ce80f4b76.png"/> 
-<hr>
+<!-- <img src="https://user-images.githubusercontent.com/98819392/185300959-35cb2844-c9b2-4e00-88dc-f47ce80f4b76.png"/>  -->
+<!-- <hr> -->
 <!-- <h4>Product Page</h4>
 <img src="https://user-images.githubusercontent.com/101566134/185566784-9c6e9755-b8c4-4070-8827-447854699ef0.png"/><hr>
 <h4>Cart Page</h4> -->
