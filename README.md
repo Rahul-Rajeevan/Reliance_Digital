@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+<h1>Project Title</h1> 
+<a href="https://elegant-centaur-093589.netlify.app/">Clone of Reliance Digital</a>
+<hr>
+<p>Reliance Digital is India’s fastest growing online retail store for the day to day and special occasion need of the electronic products.</p>
+<h2>This is a collaborative Project from Masai School in the Construct Week. We are 4 members of the team:</h2>
+<h4>TEAM MEMBERS</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<a href="https://github.com/Rahul-Rajeevan">Rahul Rajeevan</a>
+<br/>
 
-In the project directory, you can run:
+<h3>Tech Stacks used </h3>
 
-### `npm start`
+<li>HTML</li>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<li>CSS</li>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<li>Javascript</li>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr><br>
+NetlifyLink : https://reliance-digital-clone.netlify.app/
 
-### `npm run build`
+## Notes :
+All the images and links are used from the original website to get a better experience of the website. We have also included the Github link of our project for your reference.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h4>Landing Page</h4>
 
-### `npm run eject`
+<img src="https://user-images.githubusercontent.com/98819392/185300959-35cb2844-c9b2-4e00-88dc-f47ce80f4b76.png"/> 
+<hr>
+<h4>Product Page</h4>
+<img src="https://user-images.githubusercontent.com/101566134/185566784-9c6e9755-b8c4-4070-8827-447854699ef0.png"/><hr>
+<h4>Cart Page</h4>
+<img src="https://user-images.githubusercontent.com/101566134/185566905-0b96320c-e64d-4e2c-94b7-c473ed791777.png"/><hr>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<hr>
+I would say, thank you for reading this here. I hope you will find it helpful. I and my teammates completed this project with full enthusiasm, focus, and hard work. It may have some bugs, but we will try to fix them soon.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+It was not an easy task to implement the new concepts on the first attempt. I would also thank my team members to make this project successful. Feel free to reach out to us for any feedback.
