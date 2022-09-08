@@ -17,6 +17,8 @@
 
 <li>Javascript</li>
 
+<li>React</li>
+
 
 <hr><br>
 NetlifyLink : https://reliance-digital-clone.netlify.app/
