@@ -33,7 +33,7 @@ All the images and links are used from the original website to get a better expe
 <h4>Product Page</h4>
 <img src="https://user-images.githubusercontent.com/101566134/185566784-9c6e9755-b8c4-4070-8827-447854699ef0.png"/><hr>
 <h4>Cart Page</h4>
-<img src="https://user-images.githubusercontent.com/101566134/185566905-0b96320c-e64d-4e2c-94b7-c473ed791777.png"/><hr>
+<!-- <img src="https://user-images.githubusercontent.com/101566134/185566905-0b96320c-e64d-4e2c-94b7-c473ed791777.png"/><hr> -->
 
 <hr>
 I would say, thank you for reading this here. I hope you will find it helpful. I and my teammates completed this project with full enthusiasm, focus, and hard work. It may have some bugs, but we will try to fix them soon.
