@@ -2,7 +2,7 @@
 <a href="https://elegant-centaur-093589.netlify.app/">Clone of Reliance Digital</a>
 <hr>
 <p>Reliance Digital is India’s fastest growing online retail store for the day to day and special occasion need of the electronic products.</p>
-<h2>This is a collaborative Project from Masai School in the Construct Week. We are 4 members of the team:</h2>
+<h2>This is an Individual Project done by  me during the Construct Week at Masai School.</h2>
 <h4>TEAM MEMBERS</h4>
 
 
