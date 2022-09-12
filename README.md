@@ -7,7 +7,7 @@
 
 <br/>
 
-<h3>Tech Stacks used </h3>
+<h3><i>Tech Stacks used </i></h3>
 
 <ul>
 <li>HTML</li>
@@ -19,7 +19,7 @@
 <li>React</li>
 </ul>
 
-<h3>External libraries used </h3>
+<h3><i>External libraries used </i></h3>
 
 <ul>
 <li>Chakra UI</li>
@@ -27,5 +27,5 @@
 
 <br/>
 
-
+<img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
 
