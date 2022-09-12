@@ -1,12 +1,8 @@
-<h1>Project Title</h1> 
-<a href="https://elegant-centaur-093589.netlify.app/">Clone of Reliance Digital</a>
+<h1>Reliance Digital (Individual Project)</h1> 
+<a href="https://elegant-centaur-093589.netlify.app/">LIVE SITE</a>
 <hr>
 <p>Reliance Digital is India’s fastest growing online retail store for the day to day and special occasion need of the electronic products.</p>
-<h2>This is an Individual Project done by  me during the Construct Week at Masai School.</h2>
-<h4>TEAM MEMBERS</h4>
 
-
-<a href="https://github.com/Rahul-Rajeevan">Rahul Rajeevan</a>
 <br/>
 
 <h3>Tech Stacks used </h3>
@@ -21,11 +17,6 @@
 
 
 <hr><br>
-NetlifyLink : https://reliance-digital-clone.netlify.app/
-
-## Notes :
-All the images and links are used from the original website to get a better experience of the website. We have also included the Github link of our project for your reference.
-
 
 
 <!-- <h4>Landing Page</h4> -->
@@ -38,6 +29,3 @@ All the images and links are used from the original website to get a better expe
 <!-- <img src="https://user-images.githubusercontent.com/101566134/185566905-0b96320c-e64d-4e2c-94b7-c473ed791777.png"/><hr> -->
 
 <hr>
-I would say, thank you for reading this here. I hope you will find it helpful. I and my teammates completed this project with full enthusiasm, focus, and hard work. It may have some bugs, but we will try to fix them soon.
-
-It was not an easy task to implement the new concepts on the first attempt. I would also thank my team members to make this project successful. Feel free to reach out to us for any feedback.
