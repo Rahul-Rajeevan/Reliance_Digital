@@ -28,8 +28,8 @@
 <br/>
 <h2 align="center" >FUNCTIONALITIES<h2/>
 Search for items by name or brand
-<img width="70%" align="center" src="https://user-images.githubusercontent.com/101565872/191992811-985ba05d-720e-4c38-9464-430df60296c6.gif"/>
+<img width="100%" align="center" src="https://user-images.githubusercontent.com/101565872/191992811-985ba05d-720e-4c38-9464-430df60296c6.gif"/>
 Apply filters using sliders and checkboxes
-<img src=""/>
+<img width="100%" src=""/>
 <img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
 
