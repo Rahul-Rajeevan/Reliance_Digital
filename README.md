@@ -26,10 +26,17 @@
 </ul>
 
 <br/>
-<h2 align="center" >FUNCTIONALITIES<h2/>
+<h2 align="center" >✨ FUNCTIONALITIES ✨<h2/>
 Search for items by name or brand
-<img width="100%" align="center" src="https://user-images.githubusercontent.com/101565872/191992811-985ba05d-720e-4c38-9464-430df60296c6.gif"/>
+<br/><br/>
+<div width="100%">
+<img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/191992811-985ba05d-720e-4c38-9464-430df60296c6.gif"/>
+</div>
+<br/><br/>
 Apply filters using sliders and checkboxes
-<img width="100%" src=""/>
+<br/><br/>
+<div width="100%">
+<img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/191995466-641a53c2-2659-4c11-be82-c44d43700db6.gif"/>
+</div>
 <img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
 
