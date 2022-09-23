@@ -44,6 +44,13 @@ Form validation
 <img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/192012129-b0c43517-85f1-48f3-ae3d-3f4d00741781.gif"/>
 </div>
 <br/><br/>
+Checkout
+<br/><br/>
+<div width="100%">
+<img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/192013335-8531df48-4760-4e3e-a8cd-b819334947ff.gif"/>
+<div/>
+
+<br/><br/>
 <div width="100%">
 <img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/191999725-222f4349-695f-405a-ae21-4aa0a6b62f89.gif"/>
 <div/>
