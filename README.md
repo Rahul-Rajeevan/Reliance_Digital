@@ -38,8 +38,16 @@ Apply filters using sliders and checkboxes
 <img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/191995466-641a53c2-2659-4c11-be82-c44d43700db6.gif"/>
 </div>
 <br/><br/>
+Form validation
+<br/><br/>
+<div width="100%">
+<img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/192012129-b0c43517-85f1-48f3-ae3d-3f4d00741781.gif"/>
+</div>
+<br/><br/>
 <div width="100%">
 <img width="70%" margin="auto" src="https://user-images.githubusercontent.com/101565872/191999725-222f4349-695f-405a-ae21-4aa0a6b62f89.gif"/>
 <div/>
+
+
 <img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" />
 
