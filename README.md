@@ -1,7 +1,7 @@
 <img src="https://user-images.githubusercontent.com/101565872/192001579-71eeea98-c15c-42ae-8f36-746300cf8c3d.png"/>
 <br/>
-<img align="center" src="https://user-images.githubusercontent.com/101565872/189699091-7da74963-9bf3-4b72-85a2-94a3b83f87e6.gif" />
-<a href="https://elegant-centaur-093589.netlify.app/">LIVE SITE</a>
+<img src="https://user-images.githubusercontent.com/101565872/192009080-4c3769b2-bcc7-4f09-9250-b8ace9cb11fa.gif" />
+<h2><i><a href="https://elegant-centaur-093589.netlify.app/">LIVE SITE</a></i></h2>
 <h3>Reliance Digital is India’s fastest growing online retail store for electronic products. This project was completed in 5 days during the Unit Week at Masai School</h3>
 
 <br/>
