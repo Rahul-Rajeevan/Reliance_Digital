@@ -1,4 +1,4 @@
-<h1>Reliance Digital (Individual Project)</h1> 
+<img src="https://user-images.githubusercontent.com/101565872/192001579-71eeea98-c15c-42ae-8f36-746300cf8c3d.png"/>
 <a href="https://elegant-centaur-093589.netlify.app/">LIVE SITE</a>
 <br/><br/>
 <img align="center" src="https://user-images.githubusercontent.com/101565872/189699091-7da74963-9bf3-4b72-85a2-94a3b83f87e6.gif" />
