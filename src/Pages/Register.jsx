@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext';
 
 const Register = () => {
     const navigate=useNavigate();
-    const {mobile,setemail,email,setlastName,lastName,setfirstName,firstName,mobile1,setMobile1} = useContext(AppContext)
+    const {mobile,setemail,email,setlastName,lastName,setfirstName} = useContext(AppContext)
     const [first, setfirst] = useState(true)
     const [firstnam, setfirstnam] = useState("")
     const [verified, setverified] = useState(false)
